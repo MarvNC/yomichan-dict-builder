@@ -1,0 +1,30 @@
+{
+  "name": "yomichan-dict-builder",
+  "version": "1.0.0",
+  "description": "Build Yomichan/Yomitan dictionaries with ease.",
+  "main": "index.js",
+  "scripts": {
+    "format": "npx prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarvNC/yomichan-dict-builder.git"
+  },
+  "keywords": [
+    "yomichan",
+    "yomitan",
+    "dictionaries",
+    "japanese",
+    "chinese"
+  ],
+  "author": "MarvNC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarvNC/yomichan-dict-builder/issues"
+  },
+  "homepage": "https://github.com/MarvNC/yomichan-dict-builder#readme",
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  }
+}
