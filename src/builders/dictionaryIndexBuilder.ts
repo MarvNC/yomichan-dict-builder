@@ -1,3 +1,5 @@
+import { DictionaryIndex } from '../types/yomitan/dictionaryindex';
+
 export class DictionaryIndexBuilder {
   index: DictionaryIndex;
   constructor(_index?: DictionaryIndex) {

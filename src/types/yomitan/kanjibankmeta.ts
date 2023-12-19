@@ -14,8 +14,8 @@ type KanjiCharacterMetadata = [
 
 type DictionaryKanjiMetaBankV3 = KanjiCharacterMetadata[];
 
-// export type {
-//   DictionaryKanjiMetaBankV3,
-//   KanjiCharacterMetadata,
-//   KanjiFrequency,
-// };
+export type {
+  DictionaryKanjiMetaBankV3,
+  KanjiCharacterMetadata,
+  KanjiFrequency,
+};

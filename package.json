@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Build Yomichan/Yomitan dictionaries with ease.",
   "main": "dist/index.js",
-  "types": "src/index.d.ts",
   "scripts": {
     "format": "npx prettier --write .",
     "build": "tsc",

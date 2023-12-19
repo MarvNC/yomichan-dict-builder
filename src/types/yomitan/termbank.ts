@@ -138,12 +138,12 @@ type TermInformation = [
 
 type DictionaryTermBankV3 = TermInformation[];
 
-// export type {
-//   DictionaryTermBankV3,
-//   DetailedDefinition,
-//   StructuredContent,
-//   StructuredContentData,
-//   StructuredContentNode,
-//   StructuredContentStyle,
-//   TermInformation,
-// };
+export type {
+  DictionaryTermBankV3,
+  DetailedDefinition,
+  StructuredContent,
+  StructuredContentData,
+  StructuredContentNode,
+  StructuredContentStyle,
+  TermInformation,
+};

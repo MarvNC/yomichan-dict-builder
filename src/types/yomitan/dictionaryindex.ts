@@ -10,4 +10,4 @@ type DictionaryIndex = {
   frequencyMode?: 'occurrence-based' | 'rank-based';
 };
 
-// export type { DictionaryIndex };
+export type { DictionaryIndex };
