@@ -51,4 +51,9 @@ type Counters = {
   kanjiMetaBankCount: number;
 };
 
-export { DictionaryOptions, OptionalDictionaryOptions, DictionaryStats, Counters };
+export {
+  DictionaryOptions,
+  OptionalDictionaryOptions,
+  DictionaryStats,
+  Counters,
+};
