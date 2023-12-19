@@ -6,6 +6,18 @@ type TermFrequency =
       displayValue: string;
     };
 
+type FrequencyTerm = [
+  {},
+  'freq',
+  (
+    | TermFrequency
+    | {
+        reading: string;
+        frequency: TermFrequency;
+      }
+  ),
+];
+
 type PitchAccentInfo = {
   position: number;
   nasal?: number | number[];
@@ -21,17 +33,6 @@ type PitchTerm = [
     pitches: PitchAccentInfo[];
   },
 ];
-
-type FrequencyTerm =
-  | [{}, 'freq', TermFrequency]
-  | [
-      {},
-      'freq',
-      {
-        reading: string;
-        frequency: TermFrequency;
-      },
-    ];
 
 type TermMetaEntryType = PitchTerm | FrequencyTerm;
 type DictionaryTermMetaBankV3 = TermMetaEntryType[];
