@@ -26,26 +26,34 @@ const {
   const entry = new TermEntry('test').setReading('test').build();
   await dictionary.addTerm(entry);
 
+  /**
+   * @type {import('../dist/types/yomitan/termbank').StructuredContent}
+   */
+  const sc = {
+    tag: 'span',
+    content: 'string',
+    data: {
+      'dict-data': 'test',
+    },
+    lang: 'ja',
+    style: {
+      fontSize: '20px',
+      fontWeight: 'normal',
+      textDecorationLine: 'overline',
+    },
+  };
+  
+  /**
+   * @type {import('../dist/types/yomitan/termbank').DetailedDefinition}
+   */
+  const detailedDefinition = {
+    type: 'structured-content',
+    content: sc,
+  };
+
   const entry2 = new TermEntry('test2')
     .setReading('reading')
-    .addDetailedDefinition({
-      type: 'structured-content',
-      content: [
-        {
-          tag: 'span',
-          content: 'string',
-          data: {
-            'dict-data': 'test',
-          },
-          lang: 'ja',
-          style: {
-            fontSize: '20px',
-            fontWeight: 'normal',
-            textDecorationLine: 'overline',
-          },
-        },
-      ],
-    })
+    .addDetailedDefinition(detailedDefinition)
     .addDetailedDefinition('test2')
     .build();
   await dictionary.addTerm(entry2);
