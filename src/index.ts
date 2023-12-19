@@ -17,9 +17,18 @@ import {
   DictionaryTermBankV3,
   TermInformation,
 } from './types/yomitan/termbank';
-import { DictionaryTermMetaBankV3 } from './types/yomitan/termbankmeta';
-import { DictionaryKanjiBankV3 } from './types/yomitan/kanjibank';
-import { DictionaryKanjiMetaBankV3 } from './types/yomitan/kanjibankmeta';
+import {
+  DictionaryTermMetaBankV3,
+  TermMetaEntry,
+} from './types/yomitan/termbankmeta';
+import {
+  DictionaryKanjiBankV3,
+  KanjiInformation,
+} from './types/yomitan/kanjibank';
+import {
+  DictionaryKanjiMetaBankV3,
+  KanjiCharacterMetadata,
+} from './types/yomitan/kanjibankmeta';
 
 const INDEX_FILE_NAME = 'index.json';
 const TERM_BANK_FILE_NAME = (bankNumber: number) =>
@@ -94,6 +103,84 @@ export class Dictionary {
     await this.saveJsonToZip(TERM_BANK_FILE_NAME(termBankCount), this.termBank);
     this.termBank = [];
     this.counters.termBankCount++;
+  }
+
+  /**
+   * Adds a term meta to the dictionary
+   * @param meta - The term meta to add
+   */
+  async addTermMeta(meta: TermMetaEntry) {
+    this.termMetaBank.push(meta);
+    this.stats.termMetaCount++;
+    if (this.termMetaBank.length >= this.options.termBankMaxSize) {
+      await this.saveTermMetaBank();
+    }
+  }
+
+  /**
+   * Saves a term meta bank to the zip
+   */
+  private async saveTermMetaBank() {
+    if (this.termMetaBank.length === 0) return;
+    const { termMetaBankCount } = this.counters;
+    await this.saveJsonToZip(
+      TERM_META_BANK_FILE_NAME(termMetaBankCount),
+      this.termMetaBank,
+    );
+    this.termMetaBank = [];
+    this.counters.termMetaBankCount++;
+  }
+
+  /**
+   * Adds a kanji to the dictionary
+   * @param kanji - The kanji to add
+   */
+  async addKanji(kanji: KanjiInformation) {
+    this.kanjiBank.push(kanji);
+    this.stats.kanjiCount++;
+    if (this.kanjiBank.length >= this.options.termBankMaxSize) {
+      await this.saveKanjiBank();
+    }
+  }
+
+  /**
+   * Saves a kanji bank to the zip
+   */
+  private async saveKanjiBank() {
+    if (this.kanjiBank.length === 0) return;
+    const { kanjiBankCount } = this.counters;
+    await this.saveJsonToZip(
+      KANJI_BANK_FILE_NAME(kanjiBankCount),
+      this.kanjiBank,
+    );
+    this.kanjiBank = [];
+    this.counters.kanjiBankCount++;
+  }
+
+  /**
+   * Adds a kanji meta to the dictionary
+   * @param meta - The kanji meta to add
+   */
+  async addKanjiMeta(meta: KanjiCharacterMetadata) {
+    this.kanjiMetaBank.push(meta);
+    this.stats.kanjiMetaCount++;
+    if (this.kanjiMetaBank.length >= this.options.termBankMaxSize) {
+      await this.saveKanjiMetaBank();
+    }
+  }
+
+  /**
+   * Saves a kanji meta bank to the zip
+   */
+  private async saveKanjiMetaBank() {
+    if (this.kanjiMetaBank.length === 0) return;
+    const { kanjiMetaBankCount } = this.counters;
+    await this.saveJsonToZip(
+      KANJI_META_BANK_FILE_NAME(kanjiMetaBankCount),
+      this.kanjiMetaBank,
+    );
+    this.kanjiMetaBank = [];
+    this.counters.kanjiMetaBankCount++;
   }
 
   /**
