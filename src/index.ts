@@ -213,6 +213,9 @@ export class Dictionary {
 
     // Add remaining banks to zip
     await this.saveTermBank();
+    await this.saveTermMetaBank();
+    await this.saveKanjiBank();
+    await this.saveKanjiMetaBank();
 
     const zip = this.zip;
 
