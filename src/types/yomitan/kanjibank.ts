@@ -11,8 +11,4 @@ type KanjiInformation = [
 
 type DictionaryKanjiBankV3 = KanjiInformation[];
 
-export type {
-  DictionaryKanjiBankV3,
-  KanjiInformation,
-  KanjiStats,
-};
+export type { DictionaryKanjiBankV3, KanjiInformation, KanjiStats };
