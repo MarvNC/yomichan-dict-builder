@@ -22,7 +22,7 @@ type PitchAccentInfo = {
   position: number;
   nasal?: number | number[];
   devoice?: number | number[];
-  tags: string[];
+  tags?: string[];
 };
 
 type PitchTerm = [
