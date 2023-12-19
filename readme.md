@@ -38,6 +38,11 @@ import {
 } from 'yomichan-dict-builder';
 ```
 
+- The `Dictionary` class represents a Yomitan dictionary. You can add entries, kanji, and other things to it before exporting it with `export()`.
+- The `DictionaryIndex`, `TermEntry`, and `KanjiEntry` classes represent some of the more complicated parts of a Yomitan dictionary. You can create them and add them to a dictionary using the `setIndex()`, `addTerm()`, and `addKanji()` methods of the `Dictionary` class.
+
+For more, please check out the [examples](#examples) below.
+
 You might want to set `"js/ts.implicitProjectConfig.checkJs": true` in your VSCode settings to get type checking for JavaScript files and not have to deal with your dictionaries failing to validate against the Yomitan schemas.
 
 ## Examples
