@@ -1,8 +1,8 @@
-import { DictionaryIndex } from '../types/yomitan/dictionaryindex';
+import { DictionaryIndexType } from '../types/yomitan/dictionaryindex';
 
-export class DictionaryIndexBuilder {
-  index: DictionaryIndex;
-  constructor(_index?: DictionaryIndex) {
+export class DictionaryIndex {
+  index: DictionaryIndexType;
+  constructor(_index?: DictionaryIndexType) {
     this.index = _index || {
       title: '',
       revision: '',
@@ -20,7 +20,7 @@ export class DictionaryIndexBuilder {
     this.index.revision = revision;
     return this;
   }
-  setFormat(format: DictionaryIndex['format']) {
+  setFormat(format: DictionaryIndexType['format']) {
     this.index.format = format;
     return this;
   }
@@ -44,7 +44,7 @@ export class DictionaryIndexBuilder {
     this.index.sequenced = sequenced;
     return this;
   }
-  setFrequencyMode(mode: DictionaryIndex['frequencyMode']) {
+  setFrequencyMode(mode: DictionaryIndexType['frequencyMode']) {
     this.index.frequencyMode = mode;
     return this;
   }

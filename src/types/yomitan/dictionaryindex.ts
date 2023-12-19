@@ -1,4 +1,4 @@
-type DictionaryIndex = {
+type DictionaryIndexType = {
   title: string;
   revision: string;
   sequenced?: boolean;
@@ -10,4 +10,4 @@ type DictionaryIndex = {
   frequencyMode?: 'occurrence-based' | 'rank-based';
 };
 
-export type { DictionaryIndex };
+export type { DictionaryIndexType };

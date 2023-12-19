@@ -1,6 +1,6 @@
 import { DetailedDefinition, TermInformation } from '../types/yomitan/termbank';
 
-export class TermEntryBuilder {
+export class TermEntry {
   term: string;
   reading: string | undefined;
   definitionTags: string | null | undefined;

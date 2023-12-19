@@ -2,21 +2,24 @@ import JSZip from 'jszip';
 import fs from 'fs';
 
 // Builders
-export * from './builders/dictionaryIndexBuilder';
-export * from './builders/termEntryBuilder';
+export * from './builders/dictionaryIndex';
+export * from './builders/termEntry';
 
 // Types
-import { DictionaryIndex } from './types/yomitan/dictionaryindex';
+import { DictionaryIndexType } from './types/yomitan/dictionaryindex';
 import {
   DictionaryOptions,
-  OptionalDictionaryOptions,
   DictionaryStats,
   Counters,
+  DefaultOptions,
 } from './types/dictionary';
 import {
   DictionaryTermBankV3,
   TermInformation,
 } from './types/yomitan/termbank';
+import { DictionaryTermMetaBankV3 } from './types/yomitan/termbankmeta';
+import { DictionaryKanjiBankV3 } from './types/yomitan/kanjibank';
+import { DictionaryKanjiMetaBankV3 } from './types/yomitan/kanjibankmeta';
 
 const INDEX_FILE_NAME = 'index.json';
 const TERM_BANK_FILE_NAME = (bankNumber: number) =>
@@ -28,12 +31,12 @@ const KANJI_BANK_FILE_NAME = (bankNumber: number) =>
 const KANJI_META_BANK_FILE_NAME = (bankNumber: number) =>
   `kanji_meta_bank_${bankNumber}.json`;
 
-const defaultOptions: OptionalDictionaryOptions = {
+const defaultOptions: DefaultOptions = {
   termBankMaxSize: 10000,
 };
 
 export class Dictionary {
-  options: DictionaryOptions;
+  options: Required<DictionaryOptions>;
 
   zip: JSZip = new JSZip();
 
@@ -52,6 +55,9 @@ export class Dictionary {
   };
 
   termBank: DictionaryTermBankV3 = [];
+  termMetaBank: DictionaryTermMetaBankV3 = [];
+  kanjiBank: DictionaryKanjiBankV3 = [];
+  kanjiMetaBank: DictionaryKanjiMetaBankV3 = [];
 
   constructor(options: DictionaryOptions) {
     this.options = { ...defaultOptions, ...options };
@@ -62,7 +68,7 @@ export class Dictionary {
    * @param index - JSON object
    * @returns
    */
-  async setIndex(index: DictionaryIndex) {
+  async setIndex(index: DictionaryIndexType) {
     await this.saveJsonToZip(INDEX_FILE_NAME, index);
     return this;
   }
@@ -83,6 +89,7 @@ export class Dictionary {
    * Saves a term bank to the zip
    */
   private async saveTermBank() {
+    if (this.termBank.length === 0) return;
     const { termBankCount } = this.counters;
     await this.saveJsonToZip(TERM_BANK_FILE_NAME(termBankCount), this.termBank);
     this.termBank = [];
@@ -100,11 +107,13 @@ export class Dictionary {
       throw new Error('No file name set.');
     }
 
+    // Add remaining banks to zip
+    await this.saveTermBank();
+
     const zip = this.zip;
 
     // Check if index.json present in zip
     const index = await zip.file(INDEX_FILE_NAME)?.async('string');
-
     if (!index) {
       throw new Error('No index file was set.');
     }

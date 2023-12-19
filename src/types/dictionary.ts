@@ -4,14 +4,15 @@ type DictionaryOptions = {
   /**
    * The maximum number of terms in a single term/kanji bank.
    */
-  termBankMaxSize: number;
+  termBankMaxSize?: number;
   /**
    * The file name to be used when exporting the dictionary.
    */
   fileName: ZipFile;
 };
 
-type OptionalDictionaryOptions = Partial<DictionaryOptions>;
+// DictionaryOptions with termBankMaxSize required
+type DefaultOptions = Required<Pick<DictionaryOptions, 'termBankMaxSize'>>;
 
 type DictionaryStats = {
   /**
@@ -51,9 +52,4 @@ type Counters = {
   kanjiMetaBankCount: number;
 };
 
-export {
-  DictionaryOptions,
-  OptionalDictionaryOptions,
-  DictionaryStats,
-  Counters,
-};
+export { DictionaryOptions, DictionaryStats, Counters, DefaultOptions };
