@@ -65,10 +65,14 @@ export class TermEntry {
 
   /**
    * Adds a definition to the term.
-   * @param definition The definition to add to the term.
+   * @param definition The definition(s) to add to the term.
    */
-  addDetailedDefinition(definition: DetailedDefinition) {
-    this.detailedDefinitions.push(definition);
+  addDetailedDefinition(definition: DetailedDefinition | DetailedDefinition[]) {
+    if (Array.isArray(definition)) {
+      this.detailedDefinitions.push(...definition);
+    } else {
+      this.detailedDefinitions.push(definition);
+    }
     return this;
   }
 
