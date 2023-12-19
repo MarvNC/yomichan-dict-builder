@@ -29,6 +29,7 @@ import {
   DictionaryKanjiMetaBankV3,
   KanjiCharacterMetadata,
 } from './types/yomitan/kanjibankmeta';
+import { DictionaryTagBankV3 } from './types/yomitan/tagbank';
 
 const INDEX_FILE_NAME = 'index.json';
 const TERM_BANK_FILE_NAME = (bankNumber: number) =>
@@ -79,6 +80,15 @@ export class Dictionary {
    */
   async setIndex(index: DictionaryIndexType) {
     await this.saveJsonToZip(INDEX_FILE_NAME, index);
+    return this;
+  }
+
+  /**
+   * Writes the tagbank
+   * @param tagBank - The tagbank to set
+   */
+  async setTagBank(tagBank: DictionaryTagBankV3) {
+    await this.saveJsonToZip('tag_bank.json', tagBank);
     return this;
   }
 
