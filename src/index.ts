@@ -59,10 +59,10 @@ export class Dictionary {
   };
 
   counters: Counters = {
-    termBankCount: 0,
-    termMetaBankCount: 0,
-    kanjiBankCount: 0,
-    kanjiMetaBankCount: 0,
+    termBankCount: 1,
+    termMetaBankCount: 1,
+    kanjiBankCount: 1,
+    kanjiMetaBankCount: 1,
   };
 
   termBank: DictionaryTermBankV3 = [];
