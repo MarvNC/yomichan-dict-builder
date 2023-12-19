@@ -10,6 +10,10 @@ This is a library for building dictionaries for [Yomichan](https://foosoft.net/p
 npm install yomichan-dict-builder
 ```
 
+## Contributing
+
+Please let me know if you find any bugs or have any feature requests. I'd love to see this library be used to create more Yomitan dictionaries, so if you do end up using it, please let me know!
+
 ## Usage
 
 Here is an example covering pretty much all the features of the library. You might want to set `"js/ts.implicitProjectConfig.checkJs": true` in your VSCode settings to get type checking for JavaScript files and not have to deal with your dictionaries failing to validate against the Yomitan schemas.
@@ -153,5 +157,4 @@ const {
 └────────────────┴────────┘
    */
 })();
-
 ```
