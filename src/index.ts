@@ -31,6 +31,7 @@ import {
   KanjiCharacterMetadata,
 } from './types/yomitan/kanjibankmeta';
 import { DictionaryTagBankV3 } from './types/yomitan/tagbank';
+import path from 'path';
 
 const INDEX_FILE_NAME = 'index.json';
 const TERM_BANK_FILE_NAME = (bankNumber: number) =>
@@ -196,13 +197,18 @@ export class Dictionary {
 
   /**
    * Exports the dictionary to a zip file
-   * @param path - The directory to export the dictionary to
+   * @param directory - The directory to export the dictionary to
    * @returns The dictionary stats
    */
-  async export(path: string) {
+  async export(directory: string) {
     const { fileName } = this.options;
     if (!fileName) {
       throw new Error('No file name set.');
+    }
+
+    // Create directory if it doesn't exist
+    if (!fs.existsSync(directory)) {
+      fs.mkdirSync(directory);
     }
 
     // Add remaining banks to zip
@@ -224,8 +230,9 @@ export class Dictionary {
         level: 9,
       },
     });
+    const saveFullPath = path.join(directory, fileName);
+    fs.writeFileSync(saveFullPath, buffer);
 
-    fs.writeFileSync(`${path}/${fileName}`, buffer);
     return this.stats;
   }
 

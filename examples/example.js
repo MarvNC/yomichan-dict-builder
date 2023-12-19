@@ -122,7 +122,7 @@ const {
     ['jouyou', 'frequent', -5, 'included in list of regular-use characters', 0],
   ]);
 
-  const stats = await dictionary.export('./');
+  const stats = await dictionary.export('./test');
   console.log('Done exporting!');
   console.table(stats);
   /**
