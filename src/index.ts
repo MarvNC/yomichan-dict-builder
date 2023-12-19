@@ -197,7 +197,7 @@ export class Dictionary {
   /**
    * Exports the dictionary to a zip file
    * @param path - The directory to export the dictionary to
-   * @returns
+   * @returns The dictionary stats
    */
   async export(path: string) {
     const { fileName } = this.options;
@@ -226,6 +226,7 @@ export class Dictionary {
     });
 
     fs.writeFileSync(`${path}/${fileName}`, buffer);
+    return this.stats;
   }
 
   private async saveJsonToZip(fileName: string, data: any) {
