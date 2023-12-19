@@ -17,6 +17,15 @@ export class KanjiEntry {
   }
 
   /**
+   * Sets the kanji.
+   * @param kanji The kanji to be changed to.
+   */
+  setKanji(kanji: string) {
+    this.kanji = kanji;
+    return this;
+  }
+
+  /**
    * Sets the onyomi of the kanji.
    * @param onyomi The onyomi of the kanji.
    */

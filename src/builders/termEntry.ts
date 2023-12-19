@@ -19,6 +19,15 @@ export class TermEntry {
   }
 
   /**
+   * Sets the term.
+   * @param term The term to be changed to.
+   */
+  setTerm(term: string) {
+    this.term = term;
+    return this;
+  }
+
+  /**
    * Sets the reading of the term.
    * @param reading The reading of the term.
    */
