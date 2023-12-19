@@ -12,9 +12,9 @@ type KanjiInformation = [
 
 type DictionaryKanjiBankV3 = KanjiInformation[];
 
-export type {
-  DictionaryKanjiBankV3,
-  KanjiInformation,
-  KanjiMeaning,
-  KanjiStats,
-};
+// export type {
+//   DictionaryKanjiBankV3,
+//   KanjiInformation,
+//   KanjiMeaning,
+//   KanjiStats,
+// };

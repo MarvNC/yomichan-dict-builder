@@ -8,4 +8,4 @@ type TagInformation = [
 
 type DictionaryTagBankV3 = TagInformation[];
 
-export type { DictionaryTagBankV3, TagInformation };
+// export type { DictionaryTagBankV3, TagInformation };

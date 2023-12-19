@@ -6,8 +6,16 @@ type KanjiFrequency =
       displayValue: string;
     };
 
-type KanjiCharacterMetadata = [kanji: string, type: 'freq', data: KanjiFrequency];
+type KanjiCharacterMetadata = [
+  kanji: string,
+  type: 'freq',
+  data: KanjiFrequency,
+];
 
 type DictionaryKanjiMetaBankV3 = KanjiCharacterMetadata[];
 
-export type { DictionaryKanjiMetaBankV3, KanjiCharacterMetadata, KanjiFrequency };
+// export type {
+//   DictionaryKanjiMetaBankV3,
+//   KanjiCharacterMetadata,
+//   KanjiFrequency,
+// };

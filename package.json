@@ -2,9 +2,12 @@
   "name": "yomichan-dict-builder",
   "version": "1.0.0",
   "description": "Build Yomichan/Yomitan dictionaries with ease.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +27,11 @@
   },
   "homepage": "https://github.com/MarvNC/yomichan-dict-builder#readme",
   "devDependencies": {
+    "@types/node": "^20.10.5",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1"
   }
 }

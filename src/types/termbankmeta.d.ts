@@ -35,10 +35,10 @@ type FrequencyTerm =
 
 type DictionaryTermMetaBankV3 = Array<PitchTerm | FrequencyTerm>;
 
-export type {
-  DictionaryTermMetaBankV3,
-  TermFrequency,
-  PitchAccentInfo,
-  PitchTerm,
-  FrequencyTerm,
-};
+// export type {
+//   DictionaryTermMetaBankV3,
+//   TermFrequency,
+//   PitchAccentInfo,
+//   PitchTerm,
+//   FrequencyTerm,
+// };
