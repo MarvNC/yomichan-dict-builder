@@ -11,7 +11,7 @@ export class TermEntry {
   termTags: string | undefined;
 
   /**
-   * A builder for a term entry.
+   * Represents a term entry.
    * @param term The term to be added to the dictionary.
    */
   constructor(term: string) {

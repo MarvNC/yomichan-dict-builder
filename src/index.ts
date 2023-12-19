@@ -4,6 +4,7 @@ import fs from 'fs';
 // Builders
 export * from './builders/dictionaryIndex';
 export * from './builders/termEntry';
+export * from './builders/kanjiEntry';
 
 // Types
 import { DictionaryIndexType } from './types/yomitan/dictionaryindex';
@@ -19,7 +20,7 @@ import {
 } from './types/yomitan/termbank';
 import {
   DictionaryTermMetaBankV3,
-  TermMetaEntry,
+  TermMetaEntryType,
 } from './types/yomitan/termbankmeta';
 import {
   DictionaryKanjiBankV3,
@@ -119,7 +120,7 @@ export class Dictionary {
    * Adds a term meta to the dictionary
    * @param meta - The term meta to add
    */
-  async addTermMeta(meta: TermMetaEntry) {
+  async addTermMeta(meta: TermMetaEntryType) {
     this.termMetaBank.push(meta);
     this.stats.termMetaCount++;
     if (this.termMetaBank.length >= this.options.termBankMaxSize) {

@@ -1,4 +1,3 @@
-type KanjiMeaning = string;
 type KanjiStats = Record<string, string>;
 
 type KanjiInformation = [
@@ -6,7 +5,7 @@ type KanjiInformation = [
   onyomi: string,
   kunyomi: string,
   tags: string,
-  meanings: KanjiMeaning[],
+  meanings: string[],
   stats: KanjiStats,
 ];
 
@@ -15,6 +14,5 @@ type DictionaryKanjiBankV3 = KanjiInformation[];
 export type {
   DictionaryKanjiBankV3,
   KanjiInformation,
-  KanjiMeaning,
   KanjiStats,
 };

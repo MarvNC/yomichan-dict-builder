@@ -33,13 +33,13 @@ type FrequencyTerm =
       },
     ];
 
-type TermMetaEntry = PitchTerm | FrequencyTerm;
-type DictionaryTermMetaBankV3 = TermMetaEntry[];
+type TermMetaEntryType = PitchTerm | FrequencyTerm;
+type DictionaryTermMetaBankV3 = TermMetaEntryType[];
 
 export type {
   DictionaryTermMetaBankV3,
   TermFrequency,
-  TermMetaEntry,
+  TermMetaEntryType,
   PitchAccentInfo,
   PitchTerm,
   FrequencyTerm,
