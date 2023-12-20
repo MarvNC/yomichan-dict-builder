@@ -42,7 +42,7 @@ const {
       textDecorationLine: 'overline',
     },
   };
-  
+
   /**
    * @type {import('../dist/types/yomitan/termbank').DetailedDefinition}
    */
@@ -126,9 +126,13 @@ const {
   dictionary.addKanjiMeta(['亜', 'freq', 'one']);
 
   // tags
-  dictionary.setTagBank([
-    ['jouyou', 'frequent', -5, 'included in list of regular-use characters', 0],
-  ]);
+  dictionary.addTag({
+    name: 'jouyou',
+    category: 'frequent',
+    sortingOrder: -5,
+    notes: 'included in list of regular-use characters',
+    popularityScore: 0,
+  });
 
   const stats = await dictionary.export('./test');
   console.log('Done exporting!');
