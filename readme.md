@@ -48,4 +48,5 @@ You might want to set `"js/ts.implicitProjectConfig.checkJs": true` in your VSCo
 ## Examples
 
 - [example.js](./examples/example.js) - A simple example of how to use the library.
-- [CC-CEDICT for Yomitan](https://github.com/MarvNC/cc-cedict-yomitan) - A dictionary built using this library (see convert.js).
+- [CC-CEDICT for Yomitan](https://github.com/MarvNC/cc-cedict-yomitan) - A dictionary built using this library.
+- [Wikipedia for Yomitan](https://github.com/MarvNC/wikipedia-yomitan) - A dictionary built using this library.
