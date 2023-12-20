@@ -30,7 +30,11 @@ import {
   DictionaryKanjiMetaBankV3,
   KanjiCharacterMetadata,
 } from './types/yomitan/kanjibankmeta';
-import { DictionaryTagBankV3 } from './types/yomitan/tagbank';
+import {
+  DictionaryTagBankV3,
+  TagInformation,
+  TagOption,
+} from './types/yomitan/tagbank';
 import path from 'path';
 
 const INDEX_FILE_NAME = 'index.json';
@@ -70,6 +74,7 @@ export class Dictionary {
   termMetaBank: DictionaryTermMetaBankV3 = [];
   kanjiBank: DictionaryKanjiBankV3 = [];
   kanjiMetaBank: DictionaryKanjiMetaBankV3 = [];
+  tagBank: DictionaryTagBankV3 = [];
 
   constructor(options: DictionaryOptions) {
     this.options = { ...defaultOptions, ...options };
@@ -89,12 +94,27 @@ export class Dictionary {
   }
 
   /**
-   * Writes the tagbank
-   * @param tagBank - The tagbank to set
+   * Adds a tag
+   * @param tag - The tag to add
    */
-  async setTagBank(tagBank: DictionaryTagBankV3) {
-    await this.saveJsonToZip('tag_bank.json', tagBank);
+  async addTag(tag: TagOption) {
+    this.tagBank.push([
+      tag.name,
+      tag.category,
+      tag.sortingOrder ?? 0,
+      tag.notes ?? tag.name,
+      tag.popularityScore ?? 0,
+    ]);
     return this;
+  }
+
+  /**
+   * Saves a tag bank to the zip
+   */
+  private async saveTagBank() {
+    if (this.tagBank.length === 0) return;
+    await this.saveJsonToZip('tag_bank_1.json', this.tagBank);
+    this.tagBank = [];
   }
 
   /**
@@ -219,6 +239,7 @@ export class Dictionary {
     await this.saveTermMetaBank();
     await this.saveKanjiBank();
     await this.saveKanjiMetaBank();
+    await this.saveTagBank();
 
     const zip = this.zip;
 
