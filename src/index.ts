@@ -97,7 +97,7 @@ export class Dictionary {
    * Adds a tag
    * @param tag - The tag to add
    */
-  async addTag(tag: TagOption) {
+  addTag(tag: TagOption) {
     this.tagBank.push([
       tag.name,
       tag.category,
