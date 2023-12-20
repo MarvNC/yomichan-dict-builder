@@ -2,7 +2,9 @@
 
 [![npm](https://img.shields.io/npm/v/yomichan-dict-builder?style=for-the-badge)](https://www.npmjs.com/package/yomichan-dict-builder)
 
-This is a library for building dictionaries for [Yomichan](https://foosoft.net/projects/yomichan/)/[Yomitan](https://github/themoeway/yomitan) from scratch.
+This is a library for building dictionaries for
+[Yomichan](https://foosoft.net/projects/yomichan/)/[Yomitan](https://github/themoeway/yomitan)
+from scratch.
 
 ## Installation
 
@@ -12,7 +14,9 @@ npm install yomichan-dict-builder
 
 ## Contributing
 
-Please let me know if you find any bugs or have any feature requests. I'd love to see this library be used to create more Yomitan dictionaries, so if you do end up using it, please let me know!
+Please let me know if you find any bugs or have any feature requests. I'd love
+to see this library be used to create more Yomitan dictionaries, so if you do
+end up using it, please let me know!
 
 ## Usage
 
@@ -38,15 +42,24 @@ import {
 } from 'yomichan-dict-builder';
 ```
 
-- The `Dictionary` class represents a Yomitan dictionary. You can add entries, kanji, and other things to it before exporting it with `export()`.
-- The `DictionaryIndex`, `TermEntry`, and `KanjiEntry` classes represent some of the more complicated parts of a Yomitan dictionary. You can create them and add them to a dictionary using the `setIndex()`, `addTerm()`, and `addKanji()` methods of the `Dictionary` class.
+- The `Dictionary` class represents a Yomitan dictionary. You can add entries,
+  kanji, and other things to it before exporting it with `export()`.
+- The `DictionaryIndex`, `TermEntry`, and `KanjiEntry` classes represent some of
+  the more complicated parts of a Yomitan dictionary. You can create them and
+  add them to a dictionary using the `setIndex()`, `addTerm()`, and `addKanji()`
+  methods of the `Dictionary` class.
 
 For more, please check out the [examples](#examples) below.
 
-You might want to set `"js/ts.implicitProjectConfig.checkJs": true` in your VSCode settings to get type checking for JavaScript files and not have to deal with your dictionaries failing to validate against the Yomitan schemas.
+You might want to set `"js/ts.implicitProjectConfig.checkJs": true` in your
+VSCode settings to get type checking for JavaScript files and not have to deal
+with your dictionaries failing to validate against the Yomitan schemas.
 
 ## Examples
 
-- [example.js](./examples/example.js) - A simple example of how to use the library.
-- [CC-CEDICT for Yomitan](https://github.com/MarvNC/cc-cedict-yomitan) - A dictionary built using this library.
-- [Wikipedia for Yomitan](https://github.com/MarvNC/wikipedia-yomitan) - A dictionary built using this library.
+- [example.js](./examples/example.js) - A simple example of how to use the
+  library.
+- [CC-CEDICT for Yomitan](https://github.com/MarvNC/cc-cedict-yomitan) - A
+  dictionary built using this library.
+- [Wikipedia for Yomitan](https://github.com/MarvNC/wikipedia-yomitan) - A
+  dictionary built using this library.

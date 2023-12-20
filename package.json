@@ -20,7 +20,7 @@
     "chinese"
   ],
   "author": "MarvNC",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/MarvNC/yomichan-dict-builder/issues"
   },
