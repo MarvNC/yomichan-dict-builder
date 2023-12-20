@@ -81,6 +81,9 @@ export class Dictionary {
    * @returns
    */
   async setIndex(index: DictionaryIndexType) {
+    if (!index.format) {
+      index.format = 3;
+    }
     await this.saveJsonToZip(INDEX_FILE_NAME, index);
     return this;
   }
