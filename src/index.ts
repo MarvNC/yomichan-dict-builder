@@ -200,7 +200,7 @@ export class Dictionary {
    * @param directory - The directory to export the dictionary to
    * @returns The dictionary stats
    */
-  async export(directory: string) {
+  async export(directory: string = './') {
     const { fileName } = this.options;
     if (!fileName) {
       throw new Error('No file name set.');
