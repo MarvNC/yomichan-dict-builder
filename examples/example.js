@@ -113,6 +113,14 @@ const {
     { jis213: '2-04-06', skip: '1-3-8', strokes: '11', ucs: '35A8' },
   ]);
 
+  const kanjiEntry = new KanjiEntry('亜')
+    .setKunyomi('あ')
+    .setOnyomi('ア')
+    .addMeaning('Asia')
+    .setStats({ strokes: '7', grade: '8' });
+
+  dictionary.addKanji(kanjiEntry.build());
+
   // kanji meta
   dictionary.addKanjiMeta([
     '亜',
