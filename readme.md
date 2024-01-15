@@ -40,7 +40,8 @@ end up using it, please let me know!
   with your dictionaries failing to validate against the Yomitan schemas.
 - In particular, it might be a good idea to check out the
   [Yomitan Schemas](https://github.com/MarvNC/yomichan-dictionaries/blob/master/how-to-make-yomichan-dictionaries.md#read-the-schemas)
-  so that you know what's available for use when creating detailed definitions.
+  as well as the type definitions within the package so that you know what's
+  available for use when creating detailed definitions.
 - You can then type your objects in JS by using JSDoc comments to provide editor
   intellisense and type checking. You can see this in action in
   [example.js](./examples/example.js).
