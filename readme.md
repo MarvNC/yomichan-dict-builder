@@ -176,6 +176,34 @@ dictionary.addTag({
 });
 ```
 
+#### Adding Local Files
+
+You can add local files like images to the dictionary using the `addFile()`
+method:
+
+```js
+await dictionary.addFile('./examples/icon64.png', 'img/icon64.png');
+```
+
+This copies the file at `./examples/icon64.png` and saves it into the dictionary
+zip file at `img/icon64.png`.
+
+The file can then be referenced in structured content definitions:
+
+```js
+const imageScNode = {
+  tag: 'img',
+  path: 'img/icon64.png',
+  data: {
+    'dict-data': 'testImage',
+  },
+  title: 'test image',
+};
+```
+
+So `addFile()` allows you to bundle any needed images, audio clips, etc. into
+the dictionary itself.
+
 #### Exporting the Dictionary
 
 To export the constructed dictionary:
