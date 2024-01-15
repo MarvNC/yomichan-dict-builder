@@ -142,6 +142,49 @@ const {
     popularityScore: 0,
   });
 
+  // add local file
+  await dictionary.addFile('./examples/icon64.png', 'img/icon64.png');
+  /**
+   * @type {import('../dist/types/yomitan/termbank').StructuredContent}
+   */
+  const imageScNode = {
+    tag: 'img',
+    path: 'img/icon64.png',
+    data: {
+      'dict-data': 'testImage',
+    },
+    title: 'test image',
+  };
+
+  /**
+   * @type {import('../dist/types/yomitan/termbank').StructuredContent}
+   */
+  const scDefinition = {
+    tag: 'div',
+    content: [
+      {
+        tag: 'div',
+        content: 'test string',
+        lang: 'ja',
+      },
+      imageScNode,
+    ],
+  };
+  /**
+   * @type {import('../dist/types/yomitan/termbank').DetailedDefinition}
+   */
+  const imageDetailedDefinition = {
+    type: 'structured-content',
+    content: scDefinition,
+  };
+  const imgEntry = new TermEntry('img')
+    .setReading('img')
+    .addDetailedDefinition(imageDetailedDefinition)
+    .build();
+
+  await dictionary.addTerm(imgEntry);
+
+  // export
   const stats = await dictionary.export('./test');
   console.log('Done exporting!');
   console.table(stats);

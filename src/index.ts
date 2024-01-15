@@ -179,6 +179,18 @@ export class Dictionary {
   }
 
   /**
+   * Accepts an input file and saves it to the dictionary
+   * @param inputFilePath - The input file name to save to the dictionary
+   */
+  async addFile(inputFilePath: string, zipFilePath: string) {
+    if (!fs.existsSync(inputFilePath)) {
+      throw new Error(`File ${inputFilePath} does not exist.`);
+    }
+    const file = fs.readFileSync(inputFilePath);
+    this.zip.file(zipFilePath, file);
+  }
+
+  /**
    * Saves a kanji bank to the zip
    */
   private async saveKanjiBank() {
@@ -264,8 +276,7 @@ export class Dictionary {
   }
 
   private async saveJsonToZip(fileName: string, data: any) {
-    const zip = this.zip;
     const json = JSON.stringify(data);
-    zip.file(fileName, json);
+    this.zip.file(fileName, json);
   }
 }
