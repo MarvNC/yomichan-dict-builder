@@ -11,10 +11,11 @@ type DetailedDefinition =
   | {
       type: 'image';
       path: string;
-      width: number;
-      height: number;
-      title: string;
-      description: string;
+      width?: number;
+      height?: number;
+      title?: string;
+      alt?: string;
+      description?: string;
       pixelated?: boolean;
       imageRendering?: 'auto' | 'pixelated' | 'crisp-edges';
       appearance?: 'auto' | 'monochrome';
@@ -31,12 +32,20 @@ type StructuredContentStyle = {
   fontStyle?: 'normal' | 'italic';
   fontWeight?: 'normal' | 'bold';
   fontSize?: string;
+  color?: string;
+  backgroundColor?: string;
   textDecorationLine?:
     | 'none'
     | 'underline'
     | 'overline'
     | 'line-through'
     | ('underline' | 'overline' | 'line-through')[];
+  textDecorationStyle?: 'solid' | 'double' | 'dotted' | 'dashed' | 'wavy';
+  textDecorationColor?: string;
+  borderColor?: string;
+  borderStyle?: string;
+  borderRadius?: string;
+  borderWidth?: string;
   verticalAlign?:
     | 'baseline'
     | 'sub'
@@ -55,10 +64,20 @@ type StructuredContentStyle = {
     | 'justify'
     | 'justify-all'
     | 'match-parent';
-  marginTop?: number;
-  marginLeft?: number;
-  marginRight?: number;
-  marginBottom?: number;
+  textShadow?: string;
+  margin?: string;
+  marginTop?: number | string;
+  marginLeft?: number | string;
+  marginRight?: number | string;
+  marginBottom?: number | string;
+  padding?: string;
+  paddingTop?: string;
+  paddingLeft?: string;
+  paddingRight?: string;
+  paddingBottom?: string;
+  wordBreak?: 'normal' | 'break-all' | 'keep-all';
+  whiteSpace?: string;
+  cursor?: string;
   listStyleType?: string;
 };
 
@@ -89,6 +108,7 @@ type StructuredContentNode =
       content?: StructuredContentNode;
       data?: StructuredContentData;
       style?: StructuredContentStyle;
+      title?: string;
       lang?: string;
     }
   | {
@@ -98,6 +118,7 @@ type StructuredContentNode =
       width?: number;
       height?: number;
       title?: string;
+      alt?: string;
       description?: string;
       pixelated?: boolean;
       imageRendering?: 'auto' | 'pixelated' | 'crisp-edges';
