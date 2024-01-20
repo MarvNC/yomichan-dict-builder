@@ -22,7 +22,11 @@ type DetailedDefinition =
       background?: boolean;
       collapsed?: boolean;
       collapsible?: boolean;
-    };
+    }
+  | [
+      uninflectedTerm: string, // The uninflected term.
+      inflectionRules: string[], // A chain of inflection rules that produced the inflected term
+    ];
 
 type StructuredContentData = {
   [key: string]: string;
