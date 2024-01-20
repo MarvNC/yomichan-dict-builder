@@ -121,7 +121,7 @@ export class Dictionary {
    * Adds a term to the dictionary
    * @param term - The term to add
    */
-  async addTerm(term: TermInformation[]) {
+  async addTerm(term: TermInformation) {
     this.termBank.push(term);
     this.stats.termCount++;
     if (this.termBank.length >= this.options.termBankMaxSize) {
