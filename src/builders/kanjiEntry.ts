@@ -54,14 +54,19 @@ export class KanjiEntry {
 
   /**
    * Adds a meaning to the kanji.
-   * @param meaning The meaning(s) to add to the kanji.
+   * @param meaning The meaning to add to the kanji.
    */
-  addMeaning(meaning: string | string[]) {
-    if (Array.isArray(meaning)) {
-      this.meanings.push(...meaning);
-    } else {
-      this.meanings.push(meaning);
-    }
+  addMeaning(meaning: string) {
+    this.meanings.push(meaning);
+    return this;
+  }
+
+  /**
+   * Adds multiple meanings to the kanji.
+   * @param meanings The meanings to add to the kanji.
+   */
+  addMeanings(meanings: string[]) {
+    this.meanings.push(...meanings);
     return this;
   }
 
