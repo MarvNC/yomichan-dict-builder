@@ -139,6 +139,8 @@ type StructuredContentNode =
         | 'middle'
         | 'top'
         | 'bottom';
+      border?: string;
+      borderRadius?: string;
       sizeUnits?: 'px' | 'em';
     }
   | {
