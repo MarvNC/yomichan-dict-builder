@@ -23,10 +23,11 @@ end up using it, please let me know!
 
 - [example.js](./examples/example.js) - A simple example of how to use the
   library.
-- [CC-CEDICT for Yomitan](https://github.com/MarvNC/cc-cedict-yomitan) - A
-  dictionary built using this library.
-- [Wikipedia for Yomitan](https://github.com/MarvNC/wikipedia-yomitan) - A
-  dictionary built using this library.
+- [CC-CEDICT for Yomitan](https://github.com/MarvNC/cc-cedict-yomitan)
+- [Wikipedia for Yomitan](https://github.com/MarvNC/wikipedia-yomitan)
+- [VNDB To Yomitan](https://github.com/asayake-b5/yomitan-vndb) - A tool for
+  creating Yomitan dictionaries of visual novel character names from vndb.org.
+- [words.hk for Yomitan](https://github.com/MarvNC/wordshk-yomitan)
 
 ## Usage
 
