@@ -7,7 +7,7 @@ type TermFrequency =
     };
 
 type FrequencyTerm = [
-  {},
+  string,
   'freq',
   (
     | TermFrequency
@@ -26,7 +26,7 @@ type PitchAccentInfo = {
 };
 
 type PitchTerm = [
-  {},
+  string,
   'pitch',
   {
     reading: string;
@@ -34,7 +34,19 @@ type PitchTerm = [
   },
 ];
 
-type TermMetaEntryType = PitchTerm | FrequencyTerm;
+type TermPhoneticTranscription = [
+  string,
+  'ipa',
+  {
+    reading: string;
+    transcriptions: {
+      ipa: string;
+      tags?: string[];
+    }[];
+  },
+];
+
+type TermMetaEntryType = PitchTerm | FrequencyTerm | TermPhoneticTranscription;
 type DictionaryTermMetaBankV3 = TermMetaEntryType[];
 
 export type {
