@@ -19,7 +19,7 @@ Please let me know if you find any bugs or have any feature requests. I'd love
 to see this library be used to create more Yomitan dictionaries, so if you do
 end up using it, please let me know!
 
-## Examples
+## Used In
 
 - [example.js](./examples/example.js) - A simple example of how to use the
   library.
