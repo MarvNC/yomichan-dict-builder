@@ -30,6 +30,12 @@ end up using it, please let me know!
 - [words.hk for Yomitan](https://github.com/MarvNC/wordshk-yomitan)
 - [Kanji de Go for Yomitan/Anki](https://github.com/MarvNC/kanjidego-yomitan-anki)
 
+## Relevant Tools and Information
+
+- [How to Make Yomitan/Yomichan Dictionaries](https://github.com/MarvNC/yomichan-dictionaries/blob/master/how-to-make-yomichan-dictionaries.md)
+- [YomitanDic](https://github.com/hopto-dot/yomitan-dic) - a similar package for
+  creating Yomitan dictionaries, but written in Python.
+
 ## Usage
 
 - The `Dictionary` class represents a Yomitan dictionary. You can add entries,
