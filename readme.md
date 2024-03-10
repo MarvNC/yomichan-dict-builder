@@ -28,6 +28,7 @@ end up using it, please let me know!
 - [VNDB To Yomitan](https://github.com/asayake-b5/yomitan-vndb) - A tool for
   creating Yomitan dictionaries of visual novel character names from vndb.org.
 - [words.hk for Yomitan](https://github.com/MarvNC/wordshk-yomitan)
+- [Pixiv Encyclopedia for Yomitan](https://github.com/MarvNC/pixiv-yomitan)
 - [Kanji de Go for Yomitan/Anki](https://github.com/MarvNC/kanjidego-yomitan-anki)
 
 ## Relevant Tools and Information
