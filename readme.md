@@ -3,9 +3,7 @@
 [![npm](https://img.shields.io/npm/v/yomichan-dict-builder?style=for-the-badge)](https://www.npmjs.com/package/yomichan-dict-builder)
 
 This is a library for building dictionaries for
-[Yomitan](https://github/themoeway/yomitan) from scratch. Note that Yomichan is
-no longer being maintained, and thus is not compatible with some new
-dictionaries that are developed using new features exclusive to Yomitan.
+[Yomitan](https://github/themoeway/yomitan) (formerly Yomichan).
 
 ## Installation
 
