@@ -25,6 +25,7 @@ import {
 import {
   DictionaryKanjiBankV3,
   KanjiInformation,
+  KanjiStats,
 } from './types/yomitan/kanjibank';
 import {
   DictionaryKanjiMetaBankV3,
@@ -170,8 +171,31 @@ export class Dictionary {
    * Adds a kanji to the dictionary
    * @param kanji - The kanji to add
    */
-  async addKanji(kanji: KanjiInformation) {
-    this.kanjiBank.push(kanji);
+  async addKanji(
+    kanji:
+      | KanjiInformation
+      | {
+          kanji: string;
+          onyomi?: string;
+          kunyomi?: string;
+          tags?: string;
+          meanings?: string[];
+          stats?: KanjiStats;
+        },
+  ) {
+    let array: KanjiInformation = Array.isArray(kanji)
+      ? kanji
+      : [
+          kanji.kanji,
+          kanji.onyomi ?? '',
+          kanji.kunyomi ?? '',
+          kanji.tags ?? '',
+          kanji.meanings ?? [],
+          kanji.stats ?? {},
+        ];
+    // If kanji is KanjiInformation array
+
+    this.kanjiBank.push(array);
     this.stats.kanjiCount++;
     if (this.kanjiBank.length >= this.options.termBankMaxSize) {
       await this.saveKanjiBank();

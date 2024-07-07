@@ -125,6 +125,21 @@ await dictionary.addTerm(entry2);
 Kanji entries can be added using the `addKanji()` method:
 
 ```javascript
+dictionary.addKanji({
+  kanji: '読',
+  kunyomi: 'あ',
+  onyomi: 'ア',
+  meanings: ['Asia'],
+  stats: {
+    strokes: '7',
+    grade: '8',
+  },
+});
+dictionary.addKanji({
+  kanji: '詠',
+});
+
+// Alternatively, create a KanjiEntry object first
 const { KanjiEntry } = require('yomichan-dict-builder');
 const kanjiEntry = new KanjiEntry('亜')
   .setKunyomi('あ')
