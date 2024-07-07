@@ -111,7 +111,7 @@ type StructuredContentNode =
       lang?: string;
     }
   | {
-      tag: 'span' | 'div' | 'ol' | 'ul' | 'li';
+      tag: 'span' | 'div' | 'ol' | 'ul' | 'li' | 'details' | 'summary';
       content?: StructuredContentNode;
       data?: StructuredContentData;
       style?: StructuredContentStyle;
