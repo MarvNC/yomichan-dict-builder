@@ -37,6 +37,7 @@ type StructuredContentStyle = {
   fontWeight?: 'normal' | 'bold';
   fontSize?: string;
   color?: string;
+  background?: string;
   backgroundColor?: string;
   textDecorationLine?:
     | 'none'
@@ -50,6 +51,7 @@ type StructuredContentStyle = {
   borderStyle?: string;
   borderRadius?: string;
   borderWidth?: string;
+  clipPath?: string;
   verticalAlign?:
     | 'baseline'
     | 'sub'
@@ -68,6 +70,7 @@ type StructuredContentStyle = {
     | 'justify'
     | 'justify-all'
     | 'match-parent';
+  textEmphasis?: string;
   textShadow?: string;
   margin?: string;
   marginTop?: number | string;
