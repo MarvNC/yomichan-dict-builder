@@ -6,6 +6,7 @@ export type IsoLanguageCode =
   | 'ab'
   | 'ae'
   | 'af'
+  | 'afb'
   | 'ak'
   | 'am'
   | 'an'
@@ -146,6 +147,7 @@ export type IsoLanguageCode =
   | 'sd'
   | 'se'
   | 'sg'
+  | 'sga'
   | 'sh'
   | 'si'
   | 'sk'
@@ -186,6 +188,7 @@ export type IsoLanguageCode =
   | 'xh'
   | 'yi'
   | 'yo'
+  | 'yue'
   | 'za'
   | 'zh'
   | 'zu';
