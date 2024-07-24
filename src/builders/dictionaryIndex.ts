@@ -76,6 +76,11 @@ export class DictionaryIndex {
    * @param directory - The directory to export the dictionary to
    */
   async export(directory: string = './', fileName: string = 'index.json') {
+    // Create directory if it doesn't exist
+    if (!fs.existsSync(directory)) {
+      fs.mkdirSync(directory);
+    }
+
     const saveFullPath = path.join(directory, fileName);
     fs.writeFileSync(saveFullPath, JSON.stringify(this.index));
   }
