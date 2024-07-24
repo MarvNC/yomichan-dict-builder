@@ -28,6 +28,18 @@ export class DictionaryIndex {
     this.index.author = author;
     return this;
   }
+  setIsUpdatable(isUpdatable: boolean) {
+    this.index.isUpdatable = isUpdatable;
+    return this;
+  }
+  setIndexUrl(indexUrl: string) {
+    this.index.indexUrl = indexUrl;
+    return this;
+  }
+  setDownloadUrl(downloadUrl: string) {
+    this.index.downloadUrl = downloadUrl;
+    return this;
+  }
   setDescription(description: string) {
     this.index.description = description;
     return this;

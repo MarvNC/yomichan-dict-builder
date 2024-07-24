@@ -16,7 +16,7 @@ type TagInfo = {
 type DictionaryIndexType = {
   /** Title of the dictionary. */
   title: string;
-  /** Revision of the dictionary. This value is only used for displaying information. */
+  /** Revision of the dictionary. This value is displayed, and used to check for dictionary updates. */
   revision: string;
   /** Whether or not this dictionary contains sequencing information for related terms. */
   sequenced?: boolean;
@@ -24,7 +24,13 @@ type DictionaryIndexType = {
   format?: 1 | 2 | 3;
   /** Creator of the dictionary. */
   author?: string;
-  /** URL for the source of the dictionary. */
+  /** Whether this dictionary contains links to its latest version. */
+  isUpdatable?: boolean;
+  /** URL for the index file of the latest revision of the dictionary, used to check for updates. */
+  indexUrl?: string;
+  /** URL for the download of the latest revision of the dictionary. */
+  downloadUrl?: string;
+  /** URL for the source of the dictionary, displayed in the dictionary details. */
   url?: string;
   /** Description of the dictionary data. */
   description?: string;
