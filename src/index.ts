@@ -37,6 +37,7 @@ import {
   TagOption,
 } from './types/yomitan/tagbank';
 import path from 'path';
+import { DictionaryIndex } from './builders/dictionaryIndex';
 
 const INDEX_FILE_NAME = 'index.json';
 const TERM_BANK_FILE_NAME = (bankNumber: number) =>
@@ -86,11 +87,20 @@ export class Dictionary {
    * @param index - JSON object
    * @returns
    */
-  async setIndex(index: DictionaryIndexType) {
+  async setIndex(
+    index: DictionaryIndexType,
+    directory: string = './',
+    fileName: string = 'index.json',
+  ) {
     if (!index.format) {
       index.format = 3;
     }
     await this.saveJsonToZip(INDEX_FILE_NAME, index);
+
+    if (directory || fileName) {
+      const indexBuilder = new DictionaryIndex(index);
+      await indexBuilder.export(directory, fileName);
+    }
     return this;
   }
 
