@@ -1,3 +1,5 @@
+import path from 'path';
+import fs from 'fs';
 import { DictionaryIndexType } from '../types/yomitan/dictionaryindex';
 
 export class DictionaryIndex {
@@ -68,5 +70,13 @@ export class DictionaryIndex {
     if (!this.index.attribution) throw new Error('Attribution is required');
 
     return this.index;
+  }
+  /**
+   * Exports the dictionary index to a JSON file (useful for auto updating dictionaries)
+   * @param directory - The directory to export the dictionary to
+   */
+  async export(directory: string = './', fileName: string = 'index.json') {
+    const saveFullPath = path.join(directory, fileName);
+    fs.writeFileSync(saveFullPath, JSON.stringify(this.index));
   }
 }
