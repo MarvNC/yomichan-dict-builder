@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "format": "npx prettier --write .",
+    "check-format": "npx prettier --check .",
     "build": "tsc",
     "prepublish": "npm run build"
   },
