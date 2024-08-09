@@ -43,9 +43,11 @@ end up using it, please let me know!
   the more complicated parts of a Yomitan dictionary. You can create them and
   add them to a dictionary using the `setIndex()`, `addTerm()`, and `addKanji()`
   methods of the `Dictionary` class.
-- You might want to set `"js/ts.implicitProjectConfig.checkJs": true` in your
-  VSCode settings to get type checking for JavaScript files and not have to deal
-  with your dictionaries failing to validate against the Yomitan schemas.
+- If using JS, you might want to set
+  `"js/ts.implicitProjectConfig.checkJs": true` in your VSCode settings to get
+  type checking for JavaScript files and not have to deal with your dictionaries
+  failing to validate against the Yomitan schemas. However, I recommend using
+  TypeScript.
 - In particular, it might be a good idea to check out the
   [Yomitan Schemas](https://github.com/MarvNC/yomichan-dictionaries/blob/master/how-to-make-yomichan-dictionaries.md#read-the-schemas)
   as well as the type definitions within the package so that you know what's
@@ -53,6 +55,9 @@ end up using it, please let me know!
 - You can then type your objects in JS by using JSDoc comments to provide editor
   intellisense and type checking. You can see this in action in
   [example.js](./examples/example.js).
+- You can simply add a `styles.css` file using the `addFile()` method to add
+  custom CSS to your dictionary.
+  [Read more in the official docs](https://github.com/themoeway/yomitan/blob/master/docs/making-yomitan-dictionaries.md#adding-custom-css).
 
 ### Dictionary Class
 
