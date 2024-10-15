@@ -56,5 +56,5 @@ export type {
   PitchAccentInfo,
   PitchTerm,
   FrequencyTerm,
-  TermPhoneticTranscription
+  TermPhoneticTranscription,
 };
