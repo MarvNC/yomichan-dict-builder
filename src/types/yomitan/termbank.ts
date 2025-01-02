@@ -116,6 +116,7 @@ type StructuredContentNode =
       data?: StructuredContentData;
       style?: StructuredContentStyle;
       title?: string;
+      open?: boolean;
       lang?: string;
     }
   | {
