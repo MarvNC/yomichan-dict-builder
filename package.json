@@ -1,6 +1,6 @@
 {
   "name": "yomichan-dict-builder",
-  "version": "2.11.1",
+  "version": "2.11.2",
   "description": "Build Yomichan/Yomitan dictionaries with ease.",
   "main": "dist/index.js",
   "scripts": {
