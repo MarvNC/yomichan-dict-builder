@@ -62,6 +62,14 @@ export class DictionaryIndex {
     this.index.frequencyMode = mode;
     return this;
   }
+  setSourceLanguage(sourceLanguage: DictionaryIndexType['sourceLanguage']) {
+    this.index.sourceLanguage = sourceLanguage;
+    return this;
+  }
+  setTargetLanguage(targetLanguage: DictionaryIndexType['targetLanguage']) {
+    this.index.targetLanguage = targetLanguage;
+    return this;
+  }
   build() {
     if (!this.index.title) throw new Error('Title is required');
     if (!this.index.revision) throw new Error('Revision is required');
