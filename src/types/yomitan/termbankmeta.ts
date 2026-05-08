@@ -3,7 +3,7 @@ type TermFrequency =
   | number
   | {
       value: number;
-      displayValue: string;
+      displayValue?: string;
     };
 
 type FrequencyTerm = [
@@ -19,7 +19,7 @@ type FrequencyTerm = [
 ];
 
 type PitchAccentInfo = {
-  position: number;
+  position: number | string;
   nasal?: number | number[];
   devoice?: number | number[];
   tags?: string[];
